@@ -33,6 +33,7 @@ sudo pip3 install -r requirements.txt
 - Put the original images in 'test/JPEGImages' folder.
 - Put the weight files in 'weight_files' folder.
 - Run the code in command line given below.
+- [Optional] For best result use stride=3.
 
 ## Testing on Calcium Images
 
