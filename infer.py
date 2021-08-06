@@ -1,4 +1,5 @@
 import numpy as np
+from model import fine_generator, coarse_generator
 #from libtiff import TIFF
 import os
 import matplotlib.pyplot as plt
@@ -10,12 +11,7 @@ import numpy as np
 import tensorflow as tf
 from skimage.measure import compare_ssim as ssim
 import keras
-from keras.layers import Layer, InputSpec, Reshape
-from keras.layers import Input, Add, Concatenate, Lambda
-from keras.layers import LeakyReLU
-from keras.layers import AveragePooling2D, BatchNormalization
-from keras.layers import Conv2D, Conv2DTranspose, SeparableConv2D, Dropout
-from keras.layers import Activation
+import argparse
 from keras.optimizers import Adam
 from keras.models import Model
 from keras.models import Model,load_model
@@ -30,27 +26,9 @@ import warnings
 warnings.filterwarn
 
 
-class ReflectionPadding2D(Layer):
-    def __init__(self, padding=(1, 1), **kwargs):
-        if type(padding) == int:
-            padding = (padding, padding)
-        self.padding = padding
-        self.input_spec = [InputSpec(ndim=4)]
-        super(ReflectionPadding2D, self).__init__(**kwargs)
-    def get_config(self):
-      cfg = super().get_config()
-      return cfg   
-
-    def compute_output_shape(self, s):
-        """ If you are using "channels_last" configuration"""
-        return (s[0], s[1] + 2 * self.padding[0], s[2] + 2 * self.padding[1], s[3])
-
-    def call(self, x, mask=None):
-        w_pad,h_pad = self.padding
-        return tf.pad(x, [[0,0], [h_pad,h_pad], [w_pad,w_pad], [0,0] ], 'REFLECT')
 
 
-def normalize_pred(img):
+def normalize_pred(img,g_global_model,g_local_model):
     img = np.reshape(img,[1,64,64,1])
     img_coarse = tf.image.resize(img, (32,32), method=tf.image.ResizeMethod.LANCZOS3)
     img_coarse = (img_coarse - 127.5) / 127.5
@@ -71,7 +49,7 @@ def normalize_pred(img):
     pred_img = X_fakeB[:,:,:,0]
     return [np.asarray(pred_img,dtype=np.float32),np.asarray(pred_img_coarse,dtype=np.float32)]
 
-def strided_crop(img, img_h,img_w,height, width,stride=1):
+def strided_crop(img, img_h,img_w,height, width,g_global_model,g_local_model,stride=1):
 
     full_prob = np.zeros((img_h, img_w),dtype=np.float32)
     full_sum = np.ones((img_h, img_w),dtype=np.float32)
@@ -85,10 +63,67 @@ def strided_crop(img, img_h,img_w,height, width,stride=1):
     for h in range(max_x):
         for w in range(max_y):
                 crop_img_arr = img[h * stride:(h * stride) + height,w * stride:(w * stride) + width]
-                [pred,pred_256] = normalize_pred(crop_img_arr)
+                [pred,pred_256] = normalize_pred(crop_img_arr,g_global_model,g_local_model)
                 full_prob[h * stride:(h * stride) + height,w * stride:(w * stride) + width] += pred[0]
                 full_sum[h * stride:(h * stride) + height,w * stride:(w * stride) + width] += 1
                 i = i + 1
                 #print(i)
     out_img = full_prob / full_sum
     return out_img
+
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--epochs', type=int, default=100)
+    parser.add_argument('--in_dir', type=str, default='test', help='path/to/save/dir')
+    parser.add_argument('--weight_name', type=str, default='test', help='.h5 file name')    
+    parser.add_argument('--batch_size', type=int, default=4)
+    parser.add_argument('--npz_file', type=str, default='DRIVE', help='path/to/npz/file',choices=['DRIVE','CHASEDB1','STARE'])
+    parser.add_argument('--input_dim', type=int, default=128)
+    parser.add_argument('--savedir', type=str, required=False, help='path/to/save_directory',default='RVGAN')
+    parser.add_argument('--resume_training', type=str, required=False,  default='no', choices=['yes','no'])
+    parser.add_argument('--inner_weight', type=float, default=0.5)
+    args = parser.parse_args()
+
+
+    K.clear_session()
+    gc.collect()
+
+    weight_name = args.weight_name
+    in_dir = args.in_dir
+    directory = in_dir+'/pred/'
+
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    f = glob.glob(in_dir+"/JPEGImages/*.jpg")
+
+    img_shape = (64,64,1)
+    label_shape = (64,64,1)
+    x_global = (32,32,64)
+    opt = Adam()
+
+    g_local_model = fine_generator(x_global,img_shape)
+    g_local_model.load_weights('weight_file/local_model_'+weight_name+'.h5')
+    g_local_model.compile(loss='mse', optimizer=opt)
+    
+    img_shape_g = (32,32,1)
+    g_global_model = coarse_generator(img_shape_g,n_downsampling=2, n_blocks=9, n_channels=1)
+    g_global_model.load_weights('weight_file/global_model_'+weight_name+'.h5')
+    g_global_model.compile(loss='mse',optimizer=opt)
+
+    for files in f:
+        fo = files.split('\\')
+        img = Image.open(files)
+        img_arr = np.asarray(img)
+        height, width, channel = img_arr.shape
+        filename_with_ext = fo[1].split('.')
+        filename = filename_with_ext[0]
+
+        img_name = in_dir+"/JPEGImages/"+filename+".jpg"
+        img = Image.open(img_name)
+        img_arr = np.asarray(img,dtype=np.float32)
+        img_arr = img_arr[:,:,0]
+        out_img = strided_crop(img_arr, img_arr.shape[0], img_arr.shape[1], 64, 64,3)
+        out_img_sv = out_img.copy()
+        out_img_sv = ((out_img_sv) * 255.0).astype('uint8')

@@ -1,0 +1,5 @@
+nunpy
+scikit-learn
+opencv-python
+Pillow
+scikit-image
