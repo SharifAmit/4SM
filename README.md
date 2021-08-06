@@ -31,7 +31,7 @@ sudo pip3 install -r requirements.txt
 ## Instructions for running the code
 
 - Put the original images in 'test/JPEGImages' folder.
-- Put the weight files in 'weight_files' folder.
+- Put the weight files in 'weight_file' folder.
 - Run the code in command line given below.
 - [Optional] For best result use stride=3.
 
