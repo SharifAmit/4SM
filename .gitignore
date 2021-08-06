@@ -136,3 +136,9 @@ dmypy.json
 .png
 .jpg
 .tif
+
+# Directories
+
+test/pred/*
+test/JPEGImages/*
+weight_file/*
