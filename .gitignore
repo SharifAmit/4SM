@@ -127,3 +127,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Weight files
+.hdf5
+.h5
+
+# Image files
+.png
+.jpg
+.tif

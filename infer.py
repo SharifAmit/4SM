@@ -9,7 +9,6 @@ import cv2
 from functools import partial
 import numpy as np
 import tensorflow as tf
-from skimage.measure import compare_ssim as ssim
 import keras
 import argparse
 from keras.optimizers import Adam
@@ -23,8 +22,7 @@ import gc
 import glob
 import pycm
 import warnings
-warnings.filterwarn
-
+warnings.filterwarnings('ignore')
 
 
 
@@ -75,12 +73,10 @@ def strided_crop(img, img_h,img_w,height, width,g_global_model,g_local_model,str
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--epochs', type=int, default=100)
     parser.add_argument('--in_dir', type=str, default='test', help='path/to/save/dir')
     parser.add_argument('--weight_name', type=str, default='test', help='.h5 file name')    
-    parser.add_argument('--batch_size', type=int, default=4)
-    parser.add_argument('--npz_file', type=str, default='DRIVE', help='path/to/npz/file',choices=['DRIVE','CHASEDB1','STARE'])
-    parser.add_argument('--input_dim', type=int, default=128)
+    parser.add_argument('--stride', type=int, default=3)
+    parser.add_argument('--crop_size', type=int, default=64)
     parser.add_argument('--savedir', type=str, required=False, help='path/to/save_directory',default='RVGAN')
     parser.add_argument('--resume_training', type=str, required=False,  default='no', choices=['yes','no'])
     parser.add_argument('--inner_weight', type=float, default=0.5)
@@ -90,9 +86,12 @@ if __name__ == "__main__":
     K.clear_session()
     gc.collect()
 
+    stride = args.stride # Change Stride size to 8 or 16 for faster inference prediction
+    crop_size_h = args.crop_size
+    crop_size_w = args.crop_size
     weight_name = args.weight_name
     in_dir = args.in_dir
-    directory = in_dir+'/pred/'
+    directory = in_dir+'/pred'
 
     if not os.path.exists(directory):
         os.makedirs(directory)
@@ -124,6 +123,11 @@ if __name__ == "__main__":
         img = Image.open(img_name)
         img_arr = np.asarray(img,dtype=np.float32)
         img_arr = img_arr[:,:,0]
-        out_img = strided_crop(img_arr, img_arr.shape[0], img_arr.shape[1], 64, 64,3)
+        out_img = strided_crop(img_arr, img_arr.shape[0], img_arr.shape[1], crop_size_h, crop_size_w,g_global_model,g_local_model,stride)
         out_img_sv = out_img.copy()
         out_img_sv = ((out_img_sv) * 255.0).astype('uint8')
+
+        out_img_sv = out_img_sv.astype(np.uint8)
+        out_im = Image.fromarray(out_img_sv)
+        out_im_name = directory+'/'+fo[1]
+        out_im.save(out_im_name)
