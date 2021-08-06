@@ -28,12 +28,17 @@ sudo pip3 install keras==2.3.1
 sudo pip3 install -r requirements.txt
 ```
 
+## Folder
 
-## Training
+- Put the original images in 'test/JPEGImages' folder.
+- Put the weight files in 'weight_files' folder.
+- Run the code in command line given below.
+
+## Testing on Calcium Images
 
 - Type this in terminal to run the train.py file
 ```
-python3 infer.py --npz_file=DRIVE --batch=4 --epochs=200 --savedir=RVGAN --resume_training=no --inner_weight=0.5
+python3 infer.py 
 ```
 
 - There are different flags to choose from. Not all of them are mandatory
