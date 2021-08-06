@@ -28,7 +28,7 @@ sudo pip3 install keras==2.3.1
 sudo pip3 install -r requirements.txt
 ```
 
-## Folder
+## Instructions for running the code
 
 - Put the original images in 'test/JPEGImages' folder.
 - Put the weight files in 'weight_files' folder.
