@@ -139,6 +139,6 @@ dmypy.json
 
 # Directories
 
-test/pred/*
-test/JPEGImages/*
-weight_file/*
+test/pred/
+test/JPEGImages/
+weight_file/
