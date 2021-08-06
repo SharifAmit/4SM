@@ -4,7 +4,7 @@ This code is part of our paper "CalciumGAN: Segmenting and quantifying calcium s
 
 The code is authored and maintained by Sharif Amit Kamran [Webpage]https://www.sharifamit.com/).
 
-# ## Pre-requisite
+## Pre-requisite
 - Ubuntu 18.04 / Windows 7 or later
 - NVIDIA Graphics card
 
