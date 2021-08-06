@@ -37,7 +37,7 @@ sudo pip3 install -r requirements.txt
 
 ## Testing on Calcium Images
 
-- Type this in terminal to run the train.py file
+- Type this in terminal to run the infer.py file
 ```
 python3 infer.py 
 ```
