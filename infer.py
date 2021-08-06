@@ -1,3 +1,28 @@
+ '''
+CalciumGAN/infer.py Copyright (C) 2021 Sharif Amit Kamran
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+
+'''
+
+
+
+
+
+
 import numpy as np
 from model import fine_generator, coarse_generator
 #from libtiff import TIFF
@@ -34,16 +59,12 @@ def normalize_pred(img,g_global_model,g_local_model):
     
     X_fakeB_coarse,x_global = g_global_model.predict(img_coarse)
     X_fakeB_coarse = (X_fakeB_coarse+1)/2.0
-    #X_fakeB_coarse = ((X_fakeB_coarse + 1) * 127.5).astype('uint8')
-    #X_fakeB_coarse = cv2.normalize(X_fakeB_coarse, None, alpha = 0, beta = 255, norm_type = cv2.NORM_MINMAX, dtype = cv2.CV_32F)
     pred_img_coarse = X_fakeB_coarse[:,:,:,0]
 
 
     img = (img - 127.5) / 127.5
     X_fakeB = g_local_model.predict([img,x_global])
     X_fakeB = (X_fakeB+1)/2.0
-    #X_fakeB = ((X_fakeB + 1) * 127.5).astype('uint8')
-    #X_fakeB = cv2.normalize(X_fakeB, None, alpha = 0, beta = 255, norm_type = cv2.NORM_MINMAX, dtype = cv2.CV_32F)
     pred_img = X_fakeB[:,:,:,0]
     return [np.asarray(pred_img,dtype=np.float32),np.asarray(pred_img_coarse,dtype=np.float32)]
 
@@ -53,9 +74,7 @@ def strided_crop(img, img_h,img_w,height, width,g_global_model,g_local_model,str
     full_sum = np.ones((img_h, img_w),dtype=np.float32)
     
     max_x = int(((img.shape[0]-height)/stride)+1)
-    #print("max_x:",max_x)
     max_y = int(((img.shape[1]-width)/stride)+1)
-    #print("max_y:",max_y)
     max_crops = (max_x)*(max_y)
     i = 0
     for h in range(max_x):
@@ -77,9 +96,6 @@ if __name__ == "__main__":
     parser.add_argument('--weight_name', type=str, default='test', help='.h5 file name')    
     parser.add_argument('--stride', type=int, default=3)
     parser.add_argument('--crop_size', type=int, default=64)
-    parser.add_argument('--savedir', type=str, required=False, help='path/to/save_directory',default='RVGAN')
-    parser.add_argument('--resume_training', type=str, required=False,  default='no', choices=['yes','no'])
-    parser.add_argument('--inner_weight', type=float, default=0.5)
     args = parser.parse_args()
 
 
