@@ -142,3 +142,7 @@ dmypy.json
 test/pred/
 test/JPEGImages/
 weight_file/
+
+test/pred/*.png
+test/JPEGImages/*.jpg
+weight_file/*.h5
