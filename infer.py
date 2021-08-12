@@ -26,6 +26,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 import numpy as np
 from model import fine_generator, coarse_generator
 #from libtiff import TIFF
+import pandas as pd
 import os
 import matplotlib.pyplot as plt
 from PIL import Image,ImageFilter
@@ -89,9 +90,19 @@ def strided_crop(img, img_h,img_w,height, width,g_global_model,g_local_model,str
     return out_img
 
 def threshold(img):
+    
     binary_map = (img > 50).astype(np.uint8)
     binary_map[binary_map==1] = 255
     return binary_map
+
+def connected_component(img,connectivity=8):
+
+    binary_map = (img > 127).astype(np.uint8)
+    output = cv2.connectedComponentsWithStats(binary_map, connectivity, cv2.CV_32S)
+    stats = output[2]
+    df = pd.DataFrame(stats[1:])
+    df.columns = ['Left','Top','Width','Height','Area']
+    return df
 
 if __name__ == "__main__":
 
@@ -100,6 +111,7 @@ if __name__ == "__main__":
     parser.add_argument('--weight_name', type=str, default='test', help='.h5 file name')    
     parser.add_argument('--stride', type=int, default=3)
     parser.add_argument('--crop_size', type=int, default=64)
+    parser.add_argument('--connectivity',type=int,default=8,choices=[4,8], help='connected component connectivity, either 4 or 8')
     args = parser.parse_args()
 
 
@@ -110,15 +122,13 @@ if __name__ == "__main__":
     crop_size_h = args.crop_size
     crop_size_w = args.crop_size
     weight_name = args.weight_name
+    connectivity = args.connectivity
     in_dir = args.in_dir
-    directory = in_dir+'/pred'
-    directory2 = in_dir+'/thresh'
+    directories = [in_dir+'/pred',in_dir+'/thresh',in_dir+'/quant_csv']
 
-    if not os.path.exists(directory):
-        os.makedirs(directory)
-
-    if not os.path.exists(directory2):
-        os.makedirs(directory2)
+    for d in directories:
+        if not os.path.exists(d):
+            os.makedirs(d)
 
     f = glob.glob(in_dir+"/JPEGImages/*.jpg")
 
@@ -154,14 +164,21 @@ if __name__ == "__main__":
 
         out_img_sv = out_img_sv.astype(np.uint8)
         out_im = Image.fromarray(out_img_sv)
-        out_im_name = directory+'/'+fo[1]
+        out_im_name = directories[0]+'/'+fo[1]
         out_im.save(out_im_name)
 
 
-        out_img_thresh = out_img.copy()
+        out_img_thresh = out_img_sv.copy()
         thresh_img = threshold(out_img_thresh)
         thresh_im = Image.fromarray(thresh_img)
-        thresh_im_name = directory2+'/'+fo[1]
+        thresh_im_name =  directories[1]+'/'+fo[1]
         img.save(thresh_im_name)
+
+        cc_img = thresh_img.copy()
+        df = connected_component(cc_img,connectivity)
+        df_csv_name =  directories[2]+'/'+fo[1]
+        df.to_csv(df_csv_name)
+
+
 
 
