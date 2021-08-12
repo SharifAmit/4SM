@@ -89,9 +89,9 @@ def strided_crop(img, img_h,img_w,height, width,g_global_model,g_local_model,str
     out_img = full_prob / full_sum
     return out_img
 
-def threshold(img):
+def threshold(img,thresh):
     
-    binary_map = (img > 50).astype(np.uint8)
+    binary_map = (img > thresh).astype(np.uint8)
     binary_map[binary_map==1] = 255
     return binary_map
 
@@ -111,6 +111,7 @@ if __name__ == "__main__":
     parser.add_argument('--weight_name', type=str, default='test', help='.h5 file name')    
     parser.add_argument('--stride', type=int, default=3)
     parser.add_argument('--crop_size', type=int, default=64)
+    parser.add_argument('--threshold', type=int, default=50)
     parser.add_argument('--connectivity',type=int,default=8,choices=[4,8], help='connected component connectivity, either 4 or 8')
     args = parser.parse_args()
 
@@ -122,6 +123,7 @@ if __name__ == "__main__":
     crop_size_h = args.crop_size
     crop_size_w = args.crop_size
     weight_name = args.weight_name
+    thresh = args.threshold
     connectivity = args.connectivity
     in_dir = args.in_dir
     directories = [in_dir+'/pred',in_dir+'/thresh',in_dir+'/quant_csv']
@@ -169,7 +171,7 @@ if __name__ == "__main__":
 
 
         out_img_thresh = out_img_sv.copy()
-        thresh_img = threshold(out_img_thresh)
+        thresh_img = threshold(out_img_thresh,thresh)
         thresh_im = Image.fromarray(thresh_img)
         thresh_im_name =  directories[1]+'/'+fo[1]
         img.save(thresh_im_name)
