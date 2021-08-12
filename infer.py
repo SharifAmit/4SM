@@ -88,6 +88,10 @@ def strided_crop(img, img_h,img_w,height, width,g_global_model,g_local_model,str
     out_img = full_prob / full_sum
     return out_img
 
+def threshold(img):
+    binary_map = (img > 50).astype(np.uint8)
+    binary_map[binary_map==1] = 255
+    return binary_map
 
 if __name__ == "__main__":
 
@@ -108,9 +112,14 @@ if __name__ == "__main__":
     weight_name = args.weight_name
     in_dir = args.in_dir
     directory = in_dir+'/pred'
+    directory2 = in_dir+'/thresh'
 
     if not os.path.exists(directory):
         os.makedirs(directory)
+
+    if not os.path.exists(directory2):
+        os.makedirs(directory2)
+
     f = glob.glob(in_dir+"/JPEGImages/*.jpg")
 
     img_shape = (64,64,1)
@@ -147,3 +156,12 @@ if __name__ == "__main__":
         out_im = Image.fromarray(out_img_sv)
         out_im_name = directory+'/'+fo[1]
         out_im.save(out_im_name)
+
+
+        out_img_thresh = out_img.copy()
+        thresh_img = threshold(out_img_thresh)
+        thresh_im = Image.fromarray(thresh_img)
+        thresh_im_name = directory2+'/'+fo[1]
+        img.save(thresh_im_name)
+
+
