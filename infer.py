@@ -1,4 +1,4 @@
- '''
+'''
 CalciumGAN/infer.py Copyright (C) 2021 Sharif Amit Kamran
 
 This program is free software; you can redistribute it and/or modify
@@ -14,8 +14,6 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along
 with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
-
 '''
 
 
@@ -50,14 +48,14 @@ import pycm
 import warnings
 warnings.filterwarnings('ignore')
 
-
+dirname = os.path.dirname(__file__)
 
 def normalize_pred(img,g_global_model,g_local_model):
     img = np.reshape(img,[1,64,64,1])
     img_coarse = tf.image.resize(img, (32,32), method=tf.image.ResizeMethod.LANCZOS3)
     img_coarse = (img_coarse - 127.5) / 127.5
     img_coarse = np.array(img_coarse)
-    
+
     X_fakeB_coarse,x_global = g_global_model.predict(img_coarse)
     X_fakeB_coarse = (X_fakeB_coarse+1)/2.0
     pred_img_coarse = X_fakeB_coarse[:,:,:,0]
@@ -73,7 +71,7 @@ def strided_crop(img, img_h,img_w,height, width,g_global_model,g_local_model,str
 
     full_prob = np.zeros((img_h, img_w),dtype=np.float32)
     full_sum = np.ones((img_h, img_w),dtype=np.float32)
-    
+
     max_x = int(((img.shape[0]-height)/stride)+1)
     max_y = int(((img.shape[1]-width)/stride)+1)
     max_crops = (max_x)*(max_y)
@@ -90,11 +88,10 @@ def strided_crop(img, img_h,img_w,height, width,g_global_model,g_local_model,str
     return out_img
 
 def threshold(img,thresh):
-    
+
     binary_map = (img > thresh).astype(np.uint8)
     binary_map[binary_map==1] = 255
     return binary_map
-
 
 def connected_component(img,connectivity=8):
 
@@ -107,20 +104,13 @@ def connected_component(img,connectivity=8):
 
 def overlay(img,mask,alpha=0.7):
 
-    overlay = np.zeros((mask.shape[0], mask.shape[1], 3))
-    overlay[mask == 255] = 255
-    overlay[:, :, 1] = 0
-    overlay[:, :, 2] = 0
-    image = np.zeros((img.shape[0], img.shape[1], 3))
-    image[:,:,0] = img
-    image[:,:,1] = img
-    image[:,:,2] = img
+    overlay = np.zeros((mask.shape[0],mask.shape[1],3))
+    overlay[mask==255] = 255
+    overlay[:,:,1] = 0
+    overlay[:,:,2] = 0
     overlay = overlay.astype(np.uint8)
-    image = image.astype(np.uint8)
-    print(image.shape,overlay.shape)
-    print(type(image),type(overlay))
     overlay_bgr = cv2.cvtColor(overlay, cv2.COLOR_RGB2BGR)
-    dst = cv2.addWeighted(image, alpha, overlay_bgr, 1 - alpha, 0)
+    dst = cv2.addWeighted(img, alpha, overlay_bgr, 1-alpha, 0)
     dst = cv2.cvtColor(dst, cv2.COLOR_BGR2RGB)
     return dst
 
@@ -128,7 +118,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--in_dir', type=str, default='test', help='path/to/save/dir')
-    parser.add_argument('--weight_name', type=str, default='test', help='.h5 file name')    
+    parser.add_argument('--weight_name', type=str, default='test', help='.h5 file name')
     parser.add_argument('--stride', type=int, default=3)
     parser.add_argument('--crop_size', type=int, default=64)
     parser.add_argument('--threshold', type=int, default=50)
@@ -164,21 +154,14 @@ if __name__ == "__main__":
     g_local_model = fine_generator(x_global,img_shape)
     g_local_model.load_weights('weight_file/local_model_'+weight_name+'.h5')
     g_local_model.compile(loss='mse', optimizer=opt)
-    
+
     img_shape_g = (32,32,1)
     g_global_model = coarse_generator(img_shape_g,n_downsampling=2, n_blocks=9, n_channels=1)
     g_global_model.load_weights('weight_file/global_model_'+weight_name+'.h5')
     g_global_model.compile(loss='mse',optimizer=opt)
 
     for files in f:
-        fo = files.split('\\')
-        img = Image.open(files)
-        img_arr = np.asarray(img)
-        height, width, channel = img_arr.shape
-        filename_with_ext = fo[1].split('.')
-        filename = filename_with_ext[0]
-
-        img_name = in_dir+"/JPEGImages/"+filename+".jpg"
+        img_name = os.path.join(dirname, files)
         img = Image.open(img_name)
         img_arr = np.asarray(img,dtype=np.float32)
         img_arr = img_arr[:,:,0]
@@ -188,24 +171,25 @@ if __name__ == "__main__":
 
         out_img_sv = out_img_sv.astype(np.uint8)
         out_im = Image.fromarray(out_img_sv)
-        out_im_name = directories[0]+'/'+fo[1]
+        out_im_name = os.path.join(dirname, directories[0]+'/'+ os.path.basename(files))
         out_im.save(out_im_name)
 
 
         out_img_thresh = out_img_sv.copy()
         thresh_img = threshold(out_img_thresh,thresh)
         thresh_im = Image.fromarray(thresh_img)
-        thresh_im_name =  directories[1]+'/'+fo[1]
-        thresh_im.save(thresh_im_name)
+        thresh_im_name =  os.path.join(dirname, directories[1]+'/'+ os.path.basename(files))
+        img.save(thresh_im_name)
+
 
         cc_img = thresh_img.copy()
         df = connected_component(cc_img,connectivity)
-        df_csv_name =  directories[2]+'/'+fo[1]
+        df_csv_name =  os.path.join(dirname, directories[2]+'/'+ os.path.basename(files))
         df.to_csv(df_csv_name)
 
         ovleray_img = overlay(out_img_sv.copy(),thresh_img.copy(),alpha)
         ovleray_im = Image.fromarray(ovleray_img)
-        ovleray_im_name =  directories[3]+'/'+fo[1]
+        df_csv_name =  os.path.join(dirname, directories[3]+'/'+ os.path.basename(files))
         ovleray_im.save(ovleray_im_name)
 
 
