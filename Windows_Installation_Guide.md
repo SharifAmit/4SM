@@ -27,3 +27,12 @@ conda install keras=2.3.1
 pip install streamlit
 pip install streamlit-aggrid
 ```
+## 8. Install OpenCV
+```
+pip install opencv-python
+```
+## 9. Replace scikit-learn with a downgraded version
+```
+pip uninstall scikit-learn
+pip install scikit-learn==0.20.4
+```
