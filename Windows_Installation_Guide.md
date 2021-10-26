@@ -36,8 +36,7 @@ pip install opencv-python
 pip uninstall scikit-learn
 pip install scikit-learn==0.20.4
 ```
-## 10. install pycm, seaborn
+## 10. install pycm
 ```
 pip install pycm
-pip install seaborn
 ```
