@@ -54,7 +54,7 @@ pip install pycm
 conda deactivate streamlit-calciumgan
 ```
 
-# Runnung the app
+# Running the app
 
 ## 1. Open Anaconda Prompt from Start menu 
 
