@@ -1,4 +1,4 @@
-# Installation and Prequisite packages
+# Installation 
 
 ## Pre-requisite
 - Windows 7 or later
