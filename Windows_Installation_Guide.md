@@ -1,6 +1,9 @@
 # Installation and Prequisite packages
 
-
+## Pre-requisite
+- UWindows 7 or later
+- **Supports** : NVIDIA Pascal (P100, GTX10**), Volta (V100), Turing (GTX 16**, RTX 20**, Quadro)
+- **Does not support** : NVIDIA Amphere (RTX 30**, A100) [In Development]
 
 ## 1. Download and Install Anaconda from the following link
 
