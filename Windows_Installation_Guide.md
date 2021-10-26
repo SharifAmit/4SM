@@ -71,5 +71,5 @@ git clone https://github.com/SharifAmit/CalciumGAN.git
 ```
 streamlit run web_streamlit.py
 ```
-
+## 5. A new browser will open with CalciumGAN app running on it. 
 
