@@ -22,3 +22,8 @@ conda install tensorflow-gpu=2.0.0
 ```
 conda install keras=2.3.1
 ```
+## 7. Install Streamlit & Streamlit-aggrid
+```
+pip install streamlit
+pip install streamlit-aggrid
+```
