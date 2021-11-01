@@ -4,7 +4,7 @@ This code is part of our paper "CalciumGAN: Segmenting and quantifying calcium s
 
 The authors of the papers are <b>Sharif Amit Kamran, Khondker Fariha Hossain, Hussein Moghnieh, Sarah Riar, Allison Bartlett, Alireza Tavakkoli, Kenton M Sanders and Salah A. Baker</b>
 
-The code is authored and maintained by Sharif Amit Kamran [[Webpage]](https://www.sharifamit.com/).
+The code is authored and maintained by Sharif Amit Kamran [[Webpage]](https://www.sharifamit.com/) and Hussein Moghnieh [[Webpage]](https://medium.com/@husseinmoghnie).
 
 ## Pre-requisite
 - Ubuntu 18.04 / Windows 7 or later
