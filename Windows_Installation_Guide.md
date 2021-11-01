@@ -15,7 +15,7 @@ https://www.anaconda.com/products/individual
 
 ## 3. Type following in terminal to create a virtual environment with anaconda packages
 ```
-create -n streamlit-calciumgan anaconda python=3.7
+conda create -n streamlit-calciumgan anaconda python=3.7
 ```
 ## 4. Activate the virual environment
 ```
