@@ -60,7 +60,7 @@ conda deactivate streamlit-calciumgan
 
 ## 2. Activate the virual environment
 ```
-source activate streamlit-calciumgan
+conda activate streamlit-calciumgan
 ```
 ## 3. Clone the repository from github
 ```
