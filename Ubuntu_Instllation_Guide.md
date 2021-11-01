@@ -67,7 +67,7 @@ conda activate streamlit-calciumgan
 git clone https://github.com/SharifAmit/CalciumGAN.git
 ```
 
-## 4. Type 
+## 4. Type the following to Run the App
 ```
 streamlit run CalciumGAN/web_streamlit.py
 ```
