@@ -23,7 +23,7 @@ conda activate streamlit-calciumgan
 ```
 ## 5. Install tensorflow-gpu and downgrade tensorflow-estimator to 2.0.0
 ```
-pip install tensorflow-gpu==2.0.0
+conda install tensorflow-gpu==2.0.0
 pip install tensorflow-estimator==2.0.0
 ```
 ## 6. Install Keras
