@@ -1,6 +1,7 @@
 # CalciumGAN
 
 This code is part of our paper "CalciumGAN: Segmenting and quantifying calcium signals using multi-scale generative adversarial networks" and currently under review.
+
 The authors of the papers are <b>Sharif Amit Kamran, Khondker Fariha Hossain2, Hussein Moghnieh, Sarah Riar, Allison Bartlett, Alireza Tavakkoli, Kenton M Sanders and Salah A. Baker</b>
 
 The code is authored and maintained by Sharif Amit Kamran [[Webpage]](https://www.sharifamit.com/).
