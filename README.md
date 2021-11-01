@@ -14,7 +14,7 @@ The code is authored and maintained by Sharif Amit Kamran [[Webpage]](https://ww
 ## Instructions for Installation and Running the App  
 - [Windows](https://github.com/SharifAmit/CalciumGAN/blob/main/Windows_Installation_Guide.md)
 - [Ubuntu](https://github.com/SharifAmit/CalciumGAN/blob/main/Ubuntu_Instllation_Guide.md)
-
+- [Google Colab](https://colab.research.google.com/drive/1mlmrOho8D5Cd-eqlV-aZHAYAY-EpEjmj?usp=sharing)
 # License
 
 The code is released under the GPL-2 License, you can read the license file included in the repository for details.
