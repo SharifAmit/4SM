@@ -12,8 +12,8 @@ The code is authored and maintained by Sharif Amit Kamran [[Webpage]](https://ww
 
 
 ## Instruction for Installation and running the app  
-- [[Windows]](https://github.com/SharifAmit/CalciumGAN/blob/main/Windows_Installation_Guide.md)
-- [[Ubuntu]](https://github.com/SharifAmit/CalciumGAN/blob/main/Ubuntu_Instllation_Guide.md)
+- [Windows](https://github.com/SharifAmit/CalciumGAN/blob/main/Windows_Installation_Guide.md)
+- [Ubuntu](https://github.com/SharifAmit/CalciumGAN/blob/main/Ubuntu_Instllation_Guide.md)
 
 # License
 
