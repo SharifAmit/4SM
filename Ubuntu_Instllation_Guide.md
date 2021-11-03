@@ -41,7 +41,6 @@ pip install opencv-python
 ```
 ## 9. Replace scikit-learn with a downgraded version
 ```
-pip uninstall scikit-learn
 pip install scikit-learn==0.20.4
 ```
 ## 10. install pycm
