@@ -50,7 +50,7 @@ pip install pycm
 
 ## 11. Deactivate the virual environment
 ```
-conda deactivate streamlit-calciumgan
+conda deactivate
 ```
 
 # Running the app
