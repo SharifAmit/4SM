@@ -13,17 +13,17 @@ https://www.anaconda.com/products/individual
 
 ## 2. Open Anaconda Prompt from Start menu. Clone the repository from github. 
 ```
-git clone https://github.com/SharifAmit/CalciumGAN.git
+git clone https://github.com/SharifAmit/4SM.git
 ```
 
 ## 3. Enter the CalciumGAN directory and type following in terminal to create a virtual environment with anaconda packages
 ```
 cd CalciumGAN
-conda create -n streamlit-calciumgan m2-bash anaconda python=3.7 -y
+conda create -n streamlit-4sm m2-bash anaconda python=3.7 -y
 ```
 ## 4. Activate the virual environment from the terminal.
 ```
-conda activate streamlit-calciumgan
+conda activate streamlit-4sm
 ```
 ## 5. Run the bash script in the terminal.
 ```
@@ -31,7 +31,7 @@ bash windows.sh
 ```
 ## 6. Deactivate the virual environment
 ```
-conda deactivate streamlit-calciumgan
+conda deactivate streamlit-4sm
 ```
 
 # Running the app
@@ -40,11 +40,11 @@ conda deactivate streamlit-calciumgan
 
 ## 2. Activate the virual environment
 ```
-conda activate streamlit-calciumgan
+conda activate streamlit-4sm
 ```
 ## 4. Type the following to run the app
 ```
-streamlit run CalciumGAN/web_streamlit.py
+streamlit run 4SM/web_streamlit.py
 ```
 ## 5. A new browser will open with CalciumGAN app running on it. 
 
