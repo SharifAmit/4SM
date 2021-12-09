@@ -1,4 +1,4 @@
-# CalciumGAN
+# 4SM
 
 This code is part of our paper "CalciumGAN: Segmenting and quantifying calcium signals using multi-scale generative adversarial networks" and is currently under review.
 
