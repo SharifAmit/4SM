@@ -16,7 +16,7 @@ https://www.anaconda.com/products/individual
 git clone https://github.com/SharifAmit/4SM.git
 ```
 
-## 3. Enter the CalciumGAN directory and type following in terminal to create a virtual environment with anaconda packages
+## 3. Enter the 4SM directory and type following in terminal to create a virtual environment with anaconda packages
 ```
 cd CalciumGAN
 conda create -n streamlit-4sm m2-bash anaconda python=3.7 -y
@@ -46,5 +46,5 @@ conda activate streamlit-4sm
 ```
 streamlit run 4SM/web_streamlit.py
 ```
-## 5. A new browser will open with CalciumGAN app running on it. 
+## 5. A new browser will open with 4SM app running on it. 
 
