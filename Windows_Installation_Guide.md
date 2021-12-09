@@ -11,45 +11,25 @@
 https://www.anaconda.com/products/individual
 ```
 
-## 2. Open Anaconda Prompt from Start menu. 
+## 2. Open Anaconda Prompt from Start menu. Clone the repository from github. 
+```
+git clone https://github.com/SharifAmit/CalciumGAN.git
+```
 
-## 3. Type following in terminal to create a virtual environment with anaconda packages
+## 3. Enter the CalciumGAN directory and type following in terminal to create a virtual environment with anaconda packages
 ```
-conda create -n streamlit-calciumgan anaconda python=3.7
+cd CalciumGAN
+conda create -n streamlit-calciumgan m2-bash anaconda python=3.7 -y
 ```
-## 4. Activate the virual environment
+## 4. Activate the virual environment from the terminal.
 ```
 conda activate streamlit-calciumgan
 ```
-## 5. Install tensorflow-gpu and downgrade tensorflow-estimator to 2.0.0
+## 5. Run the bash script in the terminal.
 ```
-conda install tensorflow-gpu=2.0.0
-pip install tensorflow-estimator==2.0.0
+bash windows.sh
 ```
-## 6. Install Keras
-```
-conda install keras=2.3.1
-```
-## 7. Install Streamlit & Streamlit-aggrid
-```
-pip install streamlit
-pip install streamlit-aggrid
-```
-## 8. Install OpenCV
-```
-pip install opencv-python
-```
-## 9. Replace scikit-learn with a downgraded version
-```
-pip uninstall scikit-learn
-pip install scikit-learn==0.20.4
-```
-## 10. install pycm
-```
-pip install pycm
-```
-
-## 11. Deactivate the virual environment
+## 6. Deactivate the virual environment
 ```
 conda deactivate streamlit-calciumgan
 ```
@@ -62,11 +42,6 @@ conda deactivate streamlit-calciumgan
 ```
 conda activate streamlit-calciumgan
 ```
-## 3. Clone the repository from github
-```
-git clone https://github.com/SharifAmit/CalciumGAN.git
-```
-
 ## 4. Type the following to run the app
 ```
 streamlit run CalciumGAN/web_streamlit.py
