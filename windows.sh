@@ -7,4 +7,3 @@ pip install opencv-python
 pip uninstall scikit-learn
 pip install scikit-learn==0.20.4
 pip install pycm
-conda deactivate streamlit-calciumgan
