@@ -18,7 +18,7 @@ git clone https://github.com/SharifAmit/4SM.git
 
 ## 3. Enter the 4SM directory and type following in terminal to create a virtual environment with anaconda packages
 ```
-cd CalciumGAN
+cd 4SM
 conda create -n streamlit-4sm m2-bash anaconda python=3.7 -y
 ```
 ## 4. Activate the virual environment from the terminal.
