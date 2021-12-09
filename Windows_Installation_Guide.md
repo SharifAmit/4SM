@@ -29,7 +29,7 @@ conda activate streamlit-calciumgan
 ```
 bash windows.sh
 ```
-## 5. Deactivate the virual environment
+## 6. Deactivate the virual environment
 ```
 conda deactivate streamlit-calciumgan
 ```
