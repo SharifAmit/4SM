@@ -27,7 +27,7 @@ conda activate streamlit-4sm
 ```
 ## 5. Run the bash script in the terminal.
 ```
-bash windows.sh
+bash install_windows.sh
 ```
 ## 6. Deactivate the virual environment
 ```
@@ -44,7 +44,7 @@ conda activate streamlit-4sm
 ```
 ## 4. Type the following to run the app
 ```
-streamlit run 4SM/web_streamlit.py
+streamlit run src/web_streamlit.py
 ```
 ## 5. A new browser will open with 4SM app running on it. 
 

@@ -1,5 +1,5 @@
 '''
-CalciumGAN/infer.py Copyright (C) 2021 Sharif Amit Kamran
+4SM/model.py Copyright (C) 2021 Sharif Amit Kamran, Hussein Moghnieh
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,34 +17,18 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 '''
 
 
-
-
-
-
-import numpy as np
 from model import fine_generator, coarse_generator
-#from libtiff import TIFF
 import pandas as pd
 import os
-import matplotlib.pyplot as plt
 from PIL import Image,ImageFilter
-import random
 import cv2
-from functools import partial
 import numpy as np
 import tensorflow as tf
-import keras
 import argparse
 from keras.optimizers import Adam
-from keras.models import Model
-from keras.models import Model,load_model
 import keras.backend as K
-from keras.initializers import RandomNormal
-from numpy import load
-from sklearn.metrics import confusion_matrix,jaccard_similarity_score,f1_score,roc_auc_score,auc,recall_score, auc,roc_curve
 import gc
 import glob
-import pycm
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -191,9 +175,3 @@ if __name__ == "__main__":
         ovleray_im = Image.fromarray(ovleray_img)
         df_csv_name =  os.path.join(dirname, directories[3]+'/'+ os.path.basename(files))
         ovleray_im.save(ovleray_im_name)
-
-
-
-
-
-

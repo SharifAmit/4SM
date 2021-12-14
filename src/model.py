@@ -1,5 +1,5 @@
 '''
-CalciumGAN/model.py Copyright (C) 2021 Sharif Amit Kamran
+4SM/model.py Copyright (C) 2021 Sharif Amit Kamran, Hussein Moghnieh
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -14,22 +14,15 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along
 with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
-
-
 '''
 
-
-
-
 import tensorflow as tf
-import keras
 from keras.layers import Layer, InputSpec, Reshape
 from keras.layers import Input, Add, Concatenate, Lambda
 from keras.layers import LeakyReLU
 from keras.layers import AveragePooling2D, BatchNormalization
 from keras.layers import Conv2D, Conv2DTranspose, SeparableConv2D, Dropout
 from keras.layers import Activation
-from keras.models import Model
 from keras.models import Model,load_model
 from keras.initializers import RandomNormal
 from keras.optimizers import Adam
@@ -209,5 +202,4 @@ def fine_generator(x_coarse_shape=(256,256,64),input_shape=(512, 512, 3), nff=64
     model = Model(inputs=[X_input,X_coarse], outputs=X, name='G_Fine')
     model.compile(loss='mse', optimizer=Adam(lr=0.0002, beta_1=0.5, beta_2=0.999))
 
-   #model.summary()
     return model

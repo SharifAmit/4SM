@@ -1,29 +1,32 @@
-import asyncio
-import numpy as np
+'''
+4SM/model.py Copyright (C) 2021 Sharif Amit Kamran, Hussein Moghnieh
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along
+with this program; if not, write to the Free Software Foundation, Inc.,
+51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+'''
+
+
 from model import fine_generator, coarse_generator
-# from libtiff import TIFF
 import pandas as pd
 import os
-import matplotlib.pyplot as plt
 from PIL import Image, ImageFilter
-import random
 import cv2
-from functools import partial
 import numpy as np
 import tensorflow as tf
-import keras
-import argparse
 from keras.optimizers import Adam
-from keras.models import Model
-from keras.models import Model, load_model
 import keras.backend as K
-from keras.initializers import RandomNormal
-from numpy import load
-from sklearn.metrics import confusion_matrix, jaccard_similarity_score, \
-    f1_score, roc_auc_score, auc, recall_score, auc, roc_curve
 import gc
-import glob
-import pycm
 import stats
 
 import warnings
@@ -165,7 +168,6 @@ def load_global_model(weight_name, opt):
 def process(input_images, run_dir, run_id, weight_name, stride,
     crop_size, thresh, connectivity, alpha, height_calibration,
     width_calibration):
-    # await asyncio.sleep(5)
     K.clear_session()
     gc.collect()
 
@@ -219,8 +221,6 @@ def process(input_images, run_dir, run_id, weight_name, stride,
         df["Spatial Spread"] = width_calibration * df["Spatial Spread"]
         df["Area"] = height_calibration * width_calibration * df["Area"]
         df = interval(df)
-        # df['Image'] = ' '
-        # df[0,'Image']=os.path.basename(image_path)
         global_cal_quant_df = global_cal_quant_df.append(df, sort = False)
 
         ovleray_img = overlay(img_arr.copy(), thresh_img.copy(), alpha)
@@ -268,9 +268,4 @@ def process(input_images, run_dir, run_id, weight_name, stride,
     stats.generate_plot_cat(stats_df, y='Duration_mean', title='Duration', ylabel=r'Time (ms)', file_name=f'{run_dir}/{run_id}/duration.jpg')
     stats.generate_plot_cat(stats_df, y='Interval_mean', title='Interval', ylabel=r'Time (ms)', file_name=f'{run_dir}/{run_id}/interval.jpg')
     stats.generate_plot_cat(stats_df, y='Frequency_count', title='Frequency', ylabel=r'No. of Ca$^{2+}$ Events' +'\n (per STMap)', file_name=f'{run_dir}/{run_id}/frequency.jpg')
-
     generate_all_groups_plots(run_dir)
-
-
-if __name__ == "__main__":
-    process(None, '2021-09-06 05:09:40.722')
