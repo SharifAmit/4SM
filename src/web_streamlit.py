@@ -166,8 +166,6 @@ if input_image_buffer is not None and len(input_image_buffer) > 0:
   first_input_image = Image.open(input_image_buffer[0])
 
   st.session_state.runs = set()
-  # col1.header("Selected Image")
-  # col1.image(input_image, use_column_width=True)
   w, h = first_input_image.size
   stride_selector = run_container.slider('Stride', min_value=0,
                                          max_value=w - 64, value=3, step=1)
@@ -246,8 +244,6 @@ if option is not None:
 
 
 # Export Container
-
-
 def create_download_zip(zip_directory, zip_destination, filename):
   if os.path.exists(zip_destination + '/' + filename + '.zip'):
     os.remove(zip_destination + '/' + filename + '.zip')

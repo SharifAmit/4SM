@@ -5,7 +5,7 @@ This code is part of our paper 4SM: New open-source software for subcellular seg
 
 Stochastic images            |  Plotting
 :-------------------------:|:-------------------------:
-![](docs/allison_stochastic.png)  |  ![](docs/sharif_plots.png)
+![](installation_guides/allison_stochastic.png)  |  ![](installation_guides/sharif_plots.png)
 
 The authors of the papers are <b>Sharif Amit Kamran, Khondker Fariha Hossain, Hussein Moghnieh, Sarah Riar, Allison Bartlett, Alireza Tavakkoli, Kenton M Sanders and Salah A. Baker</b>
 
