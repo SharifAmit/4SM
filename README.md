@@ -8,14 +8,14 @@ The authors of the papers are <b>Sharif Amit Kamran, Khondker Fariha Hossain, Hu
 The code is authored and maintained by Sharif Amit Kamran [[Webpage]](https://www.sharifamit.com/) and Hussein Moghnieh [[Webpage]](https://medium.com/@husseinmoghnie).
 
 
-#Graphical User Interface
+# Graphical User Interface
 The code uses streamlit library to provide a graphical user interface for ease of use
 
 
-##Stochastic image processing
+## Stochastic image processing
 ![](installation_guides/allison_stochastic.png)  
   
-##Plotting the results of multiple processed images
+## Plotting the results of multiple processed images
 ![](installation_guides/sharif_plots.png)
 
 ## Pre-requisite
