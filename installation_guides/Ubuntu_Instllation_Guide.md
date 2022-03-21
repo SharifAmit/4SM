@@ -29,9 +29,20 @@ conda create -n streamlit-4sm anaconda python=3.7 -y
 ```
 conda activate streamlit-4sm
 ```
-## 5. Run the bash script in the terminal.
+## 5. Run the following commands in your shell terminal to install the application python dependencies
 ```
-sh install_linux.sh
+conda install -y tensorflow-gpu=2.0.0
+pip install tensorflow-estimator==2.0.0
+conda install -y keras=2.3.1
+pip install streamlit==0.86.0
+pip install streamlit-aggrid==0.2.1
+pip install opencv-python
+pip uninstall -y scikit-learn
+pip install scikit-learn==0.20.4
+pip install pycm
+pip install h5py==2.10.0 --force-reinstall
+pip install matplotlib==3.5.1
+pip install seaborn==0.11.2
 ```
 ## 6. Deactivate the virual environment
 ```
