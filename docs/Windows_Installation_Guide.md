@@ -6,7 +6,6 @@
 - **Does not support** : NVIDIA Amphere (RTX 30**, A100) [In Development]
 
 ## 1. Download and Install Anaconda from the following link
-
 ```
 https://www.anaconda.com/products/individual
 ```
@@ -21,20 +20,33 @@ git clone https://github.com/SharifAmit/4SM.git
 cd 4SM
 conda create -n streamlit-4sm m2-bash anaconda python=3.7 -y
 ```
-## 4. Activate the virual environment from the terminal.
+## 4. Activate the virtual environment from the terminal.
 ```
 conda activate streamlit-4sm
 ```
-## 5. Run the bash script in the terminal.
+## 5. Run the bash script to install required python libraries
 ```
-bash install_windows.sh
+bash install_windows_libs.sh
 ```
-## 6. Deactivate the virual environment
+alternatively you can copy and paste the following commands in your terminal
 ```
-conda deactivate streamlit-4sm
+conda install -y tensorflow-gpu=2.0.0
+pip install tensorflow-estimator==2.0.0
+conda install -y keras=2.3.1
+pip install streamlit==0.86.0
+pip install streamlit-aggrid==0.2.1
+pip install opencv-python
+pip uninstall -y scikit-learn
+pip install scikit-learn==0.20.4
+pip install pycm
+pip install h5py==2.10.0 --force-reinstall
+pip install matplotlib==3.5.1
+pip install seaborn==0.11.2
 ```
 
-# Running the app
+# Running the application
+To run you the application, make sure to have the anaconda envire activated
+ in the main projcet
 
 ## 1. Open Anaconda Prompt from Start menu 
 

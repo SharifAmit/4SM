@@ -25,11 +25,22 @@ git clone https://github.com/SharifAmit/4SM.git
 cd 4SM
 conda create -n streamlit-4sm anaconda python=3.7 -y
 ```
-## 4. Activate the virual environment from the terminal.
+## 4. Activate the virtual environment from the terminal.
 ```
 conda activate streamlit-4sm
 ```
-## 5. Run the following commands in your shell terminal to install the application python dependencies
+The name of the active Anaconda env. will show in the terminal
+
+![](linux_guide/activate_conda.png)
+
+
+## 5. Install libraries dependecies by running the following in the main project folder
+```
+sh ./install_linux_libs.sh
+```
+
+Alternativly you can copy and paste the following commands into your terminal
+ 
 ```
 conda install -y tensorflow-gpu=2.0.0
 pip install tensorflow-estimator==2.0.0
@@ -44,16 +55,12 @@ pip install h5py==2.10.0 --force-reinstall
 pip install matplotlib==3.5.1
 pip install seaborn==0.11.2
 ```
-## 6. Deactivate the virual environment
-```
- source deactivate streamlit-4sm
-```
 
 # Running the app
 
 ## 1. Open Anaconda Prompt from Start menu 
 
-## 2. Activate the virual environment
+## 2. Activate the virtual environment
 ```
 source activate streamlit-4sm
 ```

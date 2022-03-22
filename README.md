@@ -69,8 +69,31 @@ The code uses streamlit library to provide a graphical user interface for ease o
 - [Google Colab](https://colab.research.google.com/drive/1mlmrOho8D5Cd-eqlV-aZHAYAY-EpEjmj?usp=sharing)
 
 
-### Anaconda
-You need to install [Anaconda](https://www.anaconda.com/products/individual), then run below:
+## Installation
+
+The installation process can be summarized in 4 simple steps
+- Download and install [Anaconda](https://www.anaconda.com/products/individual) 
+- Clone the GitHub project
+- Create and Activate an Anaconda environment
+- Install Python libraries
+
+### Windows Installation
+[Windows](docs/Windows_Installation_Guide.md)
+
+### Linux 64 / Ubuntu 18 Installation
+[Ubuntu](docs/Ubuntu_Instllation_Guide.md)  
+
+
+## Running the application
+
+After install all the dependencies, run the following command to start the web based user interface
+
+
+## Usage
+
+
+### Download the project, create anaconda environement and run the project
+
 
 ```bash
 # python3
@@ -112,7 +135,29 @@ apt-get update && apt-get install -y python3-opencv
 ```
 
 ### Windows
+## 1. Download and Install Anaconda from the following link
+```
+https://www.anaconda.com/products/individual
+```
 
+## 2. Open Anaconda Prompt from Start menu. Clone the repository from github. 
+```
+git clone https://github.com/SharifAmit/4SM.git
+```
+
+## 3. Enter the 4SM directory and type following in terminal to create a virtual environment with anaconda packages
+```
+cd 4SM
+conda create -n streamlit-4sm m2-bash anaconda python=3.7 -y
+```
+## 4. Activate the virual environment from the terminal.
+```
+conda activate streamlit-4sm
+```
+## 5. Run the bash script in the terminal.
+```
+bash install_windows.sh
+```
 
 # License
 The code is released under the GPL-2 License, you can read the license file included in the repository for details.
