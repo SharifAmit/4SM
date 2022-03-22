@@ -77,49 +77,23 @@ The installation process can be summarized in 4 simple steps
 - Create and Activate an Anaconda environment
 - Install Python libraries
 
-### Windows Installation
-[Windows](docs/Windows_Installation_Guide.md)
+ Windows Installation: [Windows](docs/Windows_Installation_Guide.md)
 
-### Linux 64 / Ubuntu 18 Installation
-[Ubuntu](docs/Ubuntu_Instllation_Guide.md)  
+### Linux 64 / Ubuntu 18 Installation: [Ubuntu](docs/Ubuntu_Instllation_Guide.md)  
 
 
 ## Running the application
 
-After install all the dependencies, run the following command to start the web based user interface
+The user interface was built using Streamlit Python library. To run the application run the following command from your base project directory
 
+```
+streamlit run ./src/web_streamlit 
+```
+![](docs/linux_guide/streamlit.png)
+
+The URL of the application is shown after running the above command line
 
 ## Usage
-
-
-### Download the project, create anaconda environement and run the project
-
-
-```bash
-# python3
-conda create --name=4sm python=3.7
-conda activate 4sm
-conda install -y tensorflow-gpu=2.0.0
-pip install tensorflow-estimator==2.0.0
-conda install -y keras=2.3.1
-pip install streamlit==0.86.0
-pip install streamlit-aggrid==0.2.1
-pip install opencv-python
-pip uninstall -y scikit-learn
-pip install scikit-learn==0.20.4
-pip install pycm
-pip install h5py==2.10.0 --force-reinstall
-pip install matplotlib==3.5.1
-pip install seaborn==0.11.2
-```
-
-### Usage
-After install all the dependencies, run the following command to start the web based user interface
-```
-streamli run ./src/web_streamlit.py --server.port=8080
-```
-
-The user interface is accessible through a web browser (make sure not to use old internet explorer version)
 
 
 
@@ -134,30 +108,6 @@ Run
 apt-get update && apt-get install -y python3-opencv
 ```
 
-### Windows
-## 1. Download and Install Anaconda from the following link
-```
-https://www.anaconda.com/products/individual
-```
-
-## 2. Open Anaconda Prompt from Start menu. Clone the repository from github. 
-```
-git clone https://github.com/SharifAmit/4SM.git
-```
-
-## 3. Enter the 4SM directory and type following in terminal to create a virtual environment with anaconda packages
-```
-cd 4SM
-conda create -n streamlit-4sm m2-bash anaconda python=3.7 -y
-```
-## 4. Activate the virual environment from the terminal.
-```
-conda activate streamlit-4sm
-```
-## 5. Run the bash script in the terminal.
-```
-bash install_windows.sh
-```
 
 # License
 The code is released under the GPL-2 License, you can read the license file included in the repository for details.
