@@ -14,9 +14,9 @@ Important: Make sure to select "Add Anaconda(3) to Windows Path" while installin
 ![](anaconda_path.png)  
 
 ### 2. Download and unzip  the application from
-```
-https://github.com/SharifAmit/4SM/archive/refs/heads/st5.zip
-```
+
+[Click here to download 4SM application](https://github.com/SharifAmit/4SM/archive/refs/heads/st5.zip)
+
 
 ### 3. Install dependencey by double clicking on 
 ```
