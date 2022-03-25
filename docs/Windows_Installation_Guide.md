@@ -29,12 +29,12 @@ This step will create Anaconda's environment and install all python dependencies
 # Running the application
 To run your application, simply double click on the batch script in the root folder of the project
 ```
-start_app_windwos.bat
+start_app_windows.bat
 ```
-A new browser will open with 4SM app running on it on
+A new browser will open with 4SM app running on the following URL:
 [http://localhost:8501](http://localhost:8501)
 
-Please note that if your browser is an old internet explorer, copy the above web address and paste it in a Google Chrome or Microsoft Edge
+Please note that if you are using an older version of Internet Explorer, copy the above URL and paste it in Google Chrome,  Microsoft Edge, or Firefox
 
 # Troubleshooting
  
