@@ -11,7 +11,6 @@ https://www.anaconda.com/products/individual
 ```
 Important: Make sure to select "Add Anaconda(3) to the system Path environment variable" during installation as shown below
 
-
 ![](anaconda_path.png)  
 
 ### 2. Download and unzip  the application from
