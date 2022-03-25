@@ -68,12 +68,26 @@ streamlit src/run web_streamlit.py
 ```
 ## 5. A new browser will open with 4SM app running on it. 
 
+## Running the application
+
+Type the follwing command to run the application. Please make sure the Anaconda env is activated
+
+```
+streamlit run ./src/web_streamlit 
+```
+![](docs/linux_guide/streamlit.png)
+
+
 ## 6. Common installation issues
 
+## Troubleshooting
+### Ubuntu
 ```
 ImportError: libGL.so.1: cannot open shared object file: No such file or directory
 ```
 Run
 ```
 apt-get update && apt-get install -y python3-opencv
-``
+```
+
+

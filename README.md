@@ -1,4 +1,3 @@
-
 <h4 align="center">
   4SM: Subcellular Signal Segmenting Spatiotemporal Model
 </h4>
@@ -12,7 +11,6 @@
 </div>
 
 <br/>
-
 
 # 4SM: Subcellular Signal Segmenting Spatiotemporal Model
 
@@ -41,6 +39,9 @@ accommodate different patterns of signals across multiple cell types. The softwa
 seamless data accessibility, quantification, graphical visualization and enables large dataset
 analysis throughput.
 
+![](docs/graphical_abstract.png)  
+
+
 # Graphical User Interface
 The code uses streamlit library to provide a graphical user interface for ease of use
 
@@ -56,8 +57,11 @@ The code uses streamlit library to provide a graphical user interface for ease o
 ## Control Panel
 ![](docs/control_panel.png)  
 
-# Installation Guide
+### Google Colab
+- [Google Colab](https://colab.research.google.com/drive/1mlmrOho8D5Cd-eqlV-aZHAYAY-EpEjmj?usp=sharing)
 
+
+# Installation Guide
 
 ## Pre-requisite
 - Ubuntu 18.04 or later / Windows 7 or later
@@ -65,26 +69,25 @@ The code uses streamlit library to provide a graphical user interface for ease o
     - **Supports** : NVIDIA Pascal (P100, GTX10**), Volta (V100), Turing (GTX 16**, RTX 20**, Quadro)
     - **Does not support** : NVIDIA Amphere (RTX 30**, A100) [In Development]
 
-### Google Colab
-- [Google Colab](https://colab.research.google.com/drive/1mlmrOho8D5Cd-eqlV-aZHAYAY-EpEjmj?usp=sharing)
-
-
-## Installation
-
+## Installation Steps
 The installation process can be summarized in 4 simple steps
 - Download and install [Anaconda](https://www.anaconda.com/products/individual) 
 - Clone the GitHub project
 - Create and Activate an Anaconda environment
 - Install Python libraries
 
- Windows Installation: [Windows](docs/Windows_Installation_Guide.md)
 
-### Linux 64 / Ubuntu 18 Installation: [Ubuntu](docs/Ubuntu_Instllation_Guide.md)  
+
+## Windows Installation 
+[Windows](docs/Windows_Installation_Guide.md)
+
+## Linux 64 / Ubuntu 18 Installation
+[Ubuntu](docs/Ubuntu_Instllation_Guide.md)  
 
 
 ## Running the application
 
-The user interface was built using Streamlit Python library. To run the application run the following command from your base project directory
+The user interface was built using Streamlit Python library. To run the application simple execute the following command in your termianl
 
 ```
 streamlit run ./src/web_streamlit 
@@ -92,21 +95,6 @@ streamlit run ./src/web_streamlit
 ![](docs/linux_guide/streamlit.png)
 
 The URL of the application is shown after running the above command line
-
-## Usage
-
-
-
-
-##Troubleshooting
-### Ubuntu
-```
-ImportError: libGL.so.1: cannot open shared object file: No such file or directory
-```
-Run
-```
-apt-get update && apt-get install -y python3-opencv
-```
 
 
 # License
