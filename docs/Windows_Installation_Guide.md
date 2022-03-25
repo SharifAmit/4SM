@@ -1,4 +1,4 @@
-# Installation 
+# Windows Installation 
 
 ## Pre-requisite
 - Windows 7 or later
@@ -7,14 +7,15 @@
 
 ### 1. Download and Install Anaconda from the following link
 
+[https://www.anaconda.com/products/individual](https://www.anaconda.com/products/individual)
+
 Important: Make sure to select "Add Anaconda(3) to the system Path environment variable" during installation as shown below
 
 ![](anaconda_path.png)  
 
-### 2. Download and unzip  the application from
+### 2. Download and unzip the application from
 
 [Click here to download 4SM application](https://github.com/SharifAmit/4SM/archive/refs/heads/st5.zip)
-
 
 ### 3. Install Python libraries dependencies 
 
