@@ -45,9 +45,13 @@ If double clicking on the batch files is not working because it cannot find Anac
 
 ![](anaconda_prompt.png)  
 
-- Navigate to the root folder of the application and install the depdencies by running ```install_windwos_libs.bat```
+- Navigate to the root folder of the application and install the dependencies by running ```install_windwos_libs.bat```
+
+![](windows_install_libs.png) 
 
 - Run the application by running ```start_app_windows.bat```
+
+![](run_windows.png) 
 
 #### 2-Blank page when opening the application
 
