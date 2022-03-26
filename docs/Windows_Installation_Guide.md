@@ -21,7 +21,7 @@ Important: Make sure to select "Add Anaconda(3) to the system Path environment v
 
 In the root folder of the unzipped project, double click on the following script
 ```
-install_windows_libs.bat
+windows_install_libs.bat
 ```
 This step will create Anaconda's environment and install all python dependencies
 
@@ -29,7 +29,7 @@ This step will create Anaconda's environment and install all python dependencies
 # Running the application
 To run your application, simply double click on the batch script in the root folder of the project
 ```
-start_app_windows.bat
+windows_start_app.bat
 ```
 A new browser will open with 4SM app running on the following URL:
 [http://localhost:8501](http://localhost:8501)
@@ -38,21 +38,23 @@ Please note that if you are using an older version of Internet Explorer, copy th
 
 # Troubleshooting
  
-#### 1-Anaconda path cannot be found
+#### 1- Anaconda path cannot be found
 If double clicking on the batch files is not working because it cannot find Anaconda executable path, you can always run Anaconda bash mode as shown below
 
 - Activate "Anaconda prompt"
 
 ![](anaconda_prompt.png)  
 
-- Navigate to the root folder of the application and install the dependencies by running ```install_windwos_libs.bat```
+- Navigate to the root folder of the application and install the dependencies by running 
+```windows_install_libs.bat```
 
 ![](windows_install_libs.png) 
 
-- Run the application by running ```start_app_windows.bat```
+- Run the application by running 
+```windows_start_app.bat```
 
 ![](run_windows.png) 
 
-#### 2-Blank page when opening the application
+#### 2- Blank page when opening the application
 
 Make sure you are not using an older version of internet explorer. It is recommended to use Google Chrome, Microsoft Edge, or FireFox
