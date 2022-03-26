@@ -1,5 +1,3 @@
-# Installation 
-
 ## Pre-requisite
 - Ubuntu 18.04 or later
 - **Supports** : NVIDIA Pascal (P100, GTX10**), Volta (V100), Turing (GTX 16**, RTX 20**, Quadro)
@@ -25,24 +23,42 @@ git clone https://github.com/SharifAmit/4SM.git
 cd 4SM
 conda create -n streamlit-4sm anaconda python=3.7 -y
 ```
-## 4. Activate the virual environment from the terminal.
+## 4. Activate the virtual environment from the terminal.
 ```
 conda activate streamlit-4sm
 ```
-## 5. Run the bash script in the terminal.
+The name of the active Anaconda env. will show in the terminal
+
+![](linux_guide/activate_conda.png)
+
+
+## 5. Install libraries dependecies by running the following in the main project folder
 ```
-sh install_linux.sh
+sh ./install_linux_libs.sh
 ```
-## 6. Deactivate the virual environment
+
+Alternativly you can copy and paste the following commands into your terminal
+ 
 ```
- source deactivate streamlit-4sm
+conda install -y tensorflow-gpu=2.0.0
+pip install tensorflow-estimator==2.0.0
+conda install -y keras=2.3.1
+pip install streamlit==0.86.0
+pip install streamlit-aggrid==0.2.1
+pip install opencv-python
+pip uninstall -y scikit-learn
+pip install scikit-learn==0.20.4
+pip install pycm
+pip install h5py==2.10.0 --force-reinstall
+pip install matplotlib==3.5.1
+pip install seaborn==0.11.2
 ```
 
 # Running the app
 
 ## 1. Open Anaconda Prompt from Start menu 
 
-## 2. Activate the virual environment
+## 2. Activate the virtual environment
 ```
 source activate streamlit-4sm
 ```
@@ -52,12 +68,26 @@ streamlit src/run web_streamlit.py
 ```
 ## 5. A new browser will open with 4SM app running on it. 
 
+## Running the application
+
+Type the follwing command to run the application. Please make sure the Anaconda env is activated
+
+```
+streamlit run ./src/web_streamlit 
+```
+![](docs/linux_guide/streamlit.png)
+
+
 ## 6. Common installation issues
 
+## Troubleshooting
+### Ubuntu
 ```
 ImportError: libGL.so.1: cannot open shared object file: No such file or directory
 ```
 Run
 ```
 apt-get update && apt-get install -y python3-opencv
-``
+```
+
+
