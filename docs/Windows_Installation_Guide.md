@@ -15,7 +15,7 @@ Important: Make sure to select "Add Anaconda(3) to the system Path environment v
 
 ### 2. Download and unzip the application from
 
-[Click here to download 4SM application](https://github.com/SharifAmit/4SM/archive/refs/heads/st5.zip)
+[Click here to download 4SM application](https://github.com/SharifAmit/4SM/archive/refs/heads/main.zip)
 
 ### 3. Install Python libraries dependencies 
 
@@ -24,7 +24,6 @@ In the root folder of the unzipped project, double click on the following script
 windows_install_libs.bat
 ```
 This step will create Anaconda's environment and install all python dependencies
-
 
 # Running the application
 To run your application, simply double click on the batch script in the root folder of the project

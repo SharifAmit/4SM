@@ -66,29 +66,13 @@ The code uses streamlit library to provide a graphical user interface for ease o
     - **Supports** : NVIDIA Pascal (P100, GTX10**), Volta (V100), Turing (GTX 16**, RTX 20**, Quadro)
     - **Does not support** : NVIDIA Amphere (RTX 30**, A100) [In Development]
 
-## Installation Steps
-The installation process can be summarized in 4 simple steps
-- Download and install [Anaconda](https://www.anaconda.com/products/individual) 
-- Clone the GitHub project
-- Create and Activate an Anaconda environment
-- Install Python libraries
-
-## Installation
+## Installation and Running 4SM
 - [Windows](docs/Windows_Installation_Guide.md)
 - [Linux 64 / Ubuntu 18](docs/Ubuntu_Instllation_Guide.md)  
 - [Google Colab](https://colab.research.google.com/drive/1mlmrOho8D5Cd-eqlV-aZHAYAY-EpEjmj?usp=sharing)
 
 
-## Running the application
-
-The user interface was built using Streamlit Python library. To run the application simple execute the following command in your termianl
-
-```
-streamlit run ./src/web_streamlit 
-```
-![](docs/linux_guide/streamlit.png)
-
-The URL of the application is shown after running the above command line
+# Usage
 
 
 # License
