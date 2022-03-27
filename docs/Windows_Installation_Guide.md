@@ -52,7 +52,7 @@ If double clicking on the batch files is not working because it cannot find Anac
 - Run the application by running 
 ```windows_start_app.bat```
 
-![](run_windows.png) 
+![](run_app_windows.png) 
 
 #### 2- Blank page when opening the application
 
