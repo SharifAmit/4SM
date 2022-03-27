@@ -3,9 +3,8 @@
 </h4>
 
 <div align="center">
-  <a href="#installation"><b>Installation</b></a> |
-  <a href="#usage"><b>Usage</b></a> |
-  <a href="https://github.com/SharifAmit/4SM/tree/main/examples"><b>Test Dataset</b></a> |
+  <a href="#Installation Guide"><b>Installation Guide</b></a> |
+  <a href="https://github.com/SharifAmit/4SM/tree/main/examples/image_dataset/"><b>Test Dataset</b></a> |
   <a href="https://www.youtube.com/watch?v=t2LsQkyAGQc"><b>4SM Installation and Demo on YouTube</b></a>
 </div>
 
@@ -38,8 +37,7 @@ accommodate different patterns of signals across multiple cell types. The softwa
 seamless data accessibility, quantification, graphical visualization and enables large dataset
 analysis throughput.
 
-[![IMAGE ALT TEXT HERE](docs/youtube_graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
-
+[![IMAGE ALT TEXT HERE](docs/graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
 
 
 # Graphical User Interface
@@ -54,7 +52,7 @@ The code uses streamlit library to provide a graphical user interface for ease o
     - **Supports** : NVIDIA Pascal (P100, GTX10**), Volta (V100), Turing (GTX 16**, RTX 20**, Quadro)
     - **Does not support** : NVIDIA Amphere (RTX 30**, A100) [In Development]
 
-## Installation and Running 4SM
+## Installing and Running 4SM
 - [Windows](docs/Windows_Installation_Guide.md)
 - [Linux 64 / Ubuntu 18](docs/Ubuntu_Instllation_Guide.md)  
 - [Google Colab](https://colab.research.google.com/drive/1mlmrOho8D5Cd-eqlV-aZHAYAY-EpEjmj?usp=sharing)
