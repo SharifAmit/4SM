@@ -5,7 +5,7 @@
 <div align="center">
   <a href="#Installation Guide"><b>Installation Guide</b></a> |
   <a href="https://github.com/SharifAmit/4SM/tree/main/examples/image_dataset/"><b>Test Dataset</b></a> |
-  <a href="https://www.youtube.com/watch?v=t2LsQkyAGQc"><b>4SM Installation and Demo on YouTube</b></a>
+  <a href="https://www.youtube.com/watch?v=t2LsQkyAGQc" target="4SM tutorial"><b>4SM Installation and Demo on YouTube</b></a>
 </div>
 
 <br/>
