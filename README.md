@@ -5,9 +5,8 @@
 <div align="center">
   <a href="#installation"><b>Installation</b></a> |
   <a href="#usage"><b>Usage</b></a> |
-  <a href="https://github.com/SharifAmit/4SM/tree/main/examples/tutorial#tutorial-1"><b>Tutorial</b></a> |
-  <a href="https://github.com/SharifAmit/4SM/tree/main/examples"><b>Examples</b></a> |
-  <a href="https://www.youtube.com/"><b>Youtube FAQ</b></a>
+  <a href="https://github.com/SharifAmit/4SM/tree/main/examples"><b>Test Dataset</b></a> |
+  <a href="https://www.youtube.com/"><b>4SM Installation and Demo on YouTube</b></a>
 </div>
 
 <br/>
@@ -45,18 +44,6 @@ analysis throughput.
 # Graphical User Interface
 The code uses streamlit library to provide a graphical user interface for ease of use
 
-## Stochastic image processing
-![](installation_guides/allison_stochastic.png)  
-  
-## Plotting the results of multiple processed images
-![](installation_guides/sharif_plots.png)
-
-## Image Segmentation
-![](docs/Image_Segmentation.png)  
-
-## Control Panel
-![](docs/control_panel.png)  
-
 
 # Installation Guide
 
@@ -73,6 +60,19 @@ The code uses streamlit library to provide a graphical user interface for ease o
 
 
 # Usage
+
+## Stochastic image processing
+![](installation_guides/allison_stochastic.png)  
+  
+## Plotting the results of multiple processed images
+![](installation_guides/sharif_plots.png)
+
+## Image Segmentation
+![](docs/Image_Segmentation.png)  
+
+## Control Panel
+![](docs/control_panel.png)  
+
 
 
 # License

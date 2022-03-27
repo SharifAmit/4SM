@@ -6,7 +6,7 @@
 - **Does not support** : NVIDIA Amphere (RTX 30**, A100) [In Development]
 
 ### 1. Download and Install Anaconda from the following link
-
+    
 [https://www.anaconda.com/products/individual](https://www.anaconda.com/products/individual)
 
 Important: Make sure to select "Add Anaconda(3) to the system Path environment variable" during installation as shown below
