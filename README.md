@@ -3,7 +3,7 @@
 </h4>
 
 <div align="center">
-  <a href="#Installation Guide"><b>Installation Guide</b></a> |
+  <a href="#installation-guide"><b>Installation Guide</b></a> |
   <a href="https://github.com/SharifAmit/4SM/tree/main/examples/image_dataset/"><b>Test Dataset</b></a> |
   <a href="https://www.youtube.com/watch?v=t2LsQkyAGQc" target="4SM tutorial"><b>4SM Installation and Demo on YouTube</b></a>
 </div>
@@ -39,9 +39,6 @@ analysis throughput.
 
 [![IMAGE ALT TEXT HERE](docs/graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
 
-# Graphical User Interface
-The code uses streamlit library to provide a graphical user interface for ease of use
-
 # Installation Guide
 
 ## Pre-requisite
@@ -57,6 +54,10 @@ The code uses streamlit library to provide a graphical user interface for ease o
 
 ## Installation Instructions and Demo on YouTube
 [![IMAGE ALT TEXT HERE](docs/youtube_graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
+
+# Graphical User Interface
+The code uses streamlit library to provide a graphical user interface for ease of use
+
 
 ## Image Segmentation
 ![](docs/Image_Segmentation.png)  
