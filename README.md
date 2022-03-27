@@ -38,7 +38,8 @@ accommodate different patterns of signals across multiple cell types. The softwa
 seamless data accessibility, quantification, graphical visualization and enables large dataset
 analysis throughput.
 
-![](docs/graphical_abstract.png)  
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/t2LsQkyAGQc/0.jpg)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
+
 
 
 # Graphical User Interface
@@ -57,6 +58,9 @@ The code uses streamlit library to provide a graphical user interface for ease o
 - [Windows](docs/Windows_Installation_Guide.md)
 - [Linux 64 / Ubuntu 18](docs/Ubuntu_Instllation_Guide.md)  
 - [Google Colab](https://colab.research.google.com/drive/1mlmrOho8D5Cd-eqlV-aZHAYAY-EpEjmj?usp=sharing)
+
+
+
 
 
 # Usage
