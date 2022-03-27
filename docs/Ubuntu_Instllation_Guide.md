@@ -2,8 +2,10 @@
 
 ### Pre-requisite
 - Ubuntu 18.04 or later
-- **Supports** : NVIDIA Pascal (P100, GTX10**), Volta (V100), Turing (GTX 16**, RTX 20**, Quadro)
-- **Does not support** : NVIDIA Amphere (RTX 30**, A100) [In Development]
+- CUDA version 10+
+- List of NVIDIA Graphics cards supporting CUDA 10+
+      https://gist.github.com/standaloneSA/99788f30466516dbcc00338b36ad5acf
+
 
 ### 1. Download and Install Anaconda from the following link
 
