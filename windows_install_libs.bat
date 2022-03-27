@@ -1,4 +1,4 @@
-call conda create --prefix ./4conda python=3.7
+call conda create -y --prefix ./4conda python=3.7
 call conda install -p ./4conda -y tensorflow-gpu=2.0.0
 call conda activate ./4conda
 call pip install tensorflow-estimator==2.0.0
