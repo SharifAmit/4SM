@@ -6,7 +6,7 @@
   <a href="#installation"><b>Installation</b></a> |
   <a href="#usage"><b>Usage</b></a> |
   <a href="https://github.com/SharifAmit/4SM/tree/main/examples"><b>Test Dataset</b></a> |
-  <a href="https://www.youtube.com/"><b>4SM Installation and Demo on YouTube</b></a>
+  <a href="https://www.youtube.com/watch?v=t2LsQkyAGQc"><b>4SM Installation and Demo on YouTube</b></a>
 </div>
 
 <br/>
@@ -38,7 +38,7 @@ accommodate different patterns of signals across multiple cell types. The softwa
 seamless data accessibility, quantification, graphical visualization and enables large dataset
 analysis throughput.
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/t2LsQkyAGQc/0.jpg)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
+[![IMAGE ALT TEXT HERE](docs/youtube_graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
 
 
 
@@ -59,17 +59,9 @@ The code uses streamlit library to provide a graphical user interface for ease o
 - [Linux 64 / Ubuntu 18](docs/Ubuntu_Instllation_Guide.md)  
 - [Google Colab](https://colab.research.google.com/drive/1mlmrOho8D5Cd-eqlV-aZHAYAY-EpEjmj?usp=sharing)
 
+## Installation Instructions and Demo on YouTube
+[![IMAGE ALT TEXT HERE](docs/youtube_graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
 
-
-
-
-# Usage
-
-## Stochastic image processing
-![](installation_guides/allison_stochastic.png)  
-  
-## Plotting the results of multiple processed images
-![](installation_guides/sharif_plots.png)
 
 ## Image Segmentation
 ![](docs/Image_Segmentation.png)  
