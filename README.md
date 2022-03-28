@@ -36,7 +36,6 @@ accommodate different patterns of signals across multiple cell types. The softwa
 seamless data accessibility, quantification, graphical visualization and enables large dataset
 analysis throughput.
 
-
 [![IMAGE ALT TEXT HERE](docs/graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
 
 # Installation Guide
