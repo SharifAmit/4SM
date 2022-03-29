@@ -148,7 +148,7 @@ if 'runs' not in st.session_state:
 
 input_image_buffer = run_container.file_uploader("Upload an image",
                                                  accept_multiple_files=True,
-                                                 type=["jpg", "jpeg", "tiff"],
+                                                 type=["jpg", "jpeg", "tif", "tiff"],
                                                  key=st.session_state.file_uploader_widget)
 threshold_selector = run_container.slider('Threshold', min_value=3,
                                           max_value=254, value=6, step=1)
