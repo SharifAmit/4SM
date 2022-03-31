@@ -47,25 +47,27 @@ To understand cellular dynamics in fluorescence imaging, we need a fast, accurat
 # Usage
 4SM pris web-based easy to use graphical interface for subcellular segmentation and analysis of spatiotemporal fluorescence signals using deep learning
 
-###Input:
- - One or multiple images to process
-   - **NOTE: 4SM supports only 8-bit grey scale images**
- - Set the threshold, crop size, and calibration parameters
+### Input:
+- **NOTE: 4SM supports only 8-bit grey scale images**
+- Threshold :
+As the predicted image is a probability map with values between 0 to 255. The user can pick a threshold value  (= 1 to 254) to make this image into a binary image with values of 0 and 255.
+- Connectivity:
+The connectivity ( = 4 or 8)  is a post-processing step for doing quantification using connected-components. So the connectivity checks either 4 neighboring pixels or 8 neighborhoods pixels for doing this quantification. Using this connected component we can count how many independent calcium transient events there are and the duration, spread, area and interval of these events.
+- Stride:
+4SM creates multiple small patches of image by using fixed sized overlapping crops from one test image. The image size can vary, but the crop size is fixed ( 64x64). By default we use a stride size of 3. However, having a larger stride will create a small number of crops from each test image and a smaller stride will yield a larger number of cropped images. Contrarily, larger strides will give faster yet poor visual results, whereas smaller strides will give slower yet high-quality visual results.
+    For example: Given Image size = 128 x 128, if we choose stride= 64, then the number of cropped images will be 4. If the stride = 8, the number of cropped images will be 81. 
 
-###Output:
- - Segmented images
+
+### Segmentation Output:
  ![](docs/Image_Segmentation.png)  
 
- - Quantification results of the segmented images
+### Quantification results of the segmented images
   ![](docs/4SM_stochastic.png)  
 
 ### Control Panel
 ![](docs/control_panel.png)  
 
-### Image Segmentation
-![](docs/Image_Segmentation.png)  
 
-### Quantification
 
 
 
