@@ -4,6 +4,7 @@
 
 <div align="center">
   <a href="#installation-guide"><b>Installation Guide</b></a> |
+  <a href="#usage"><b>Usage Guide</b></a> |
   <a href="https://github.com/SharifAmit/4SM/tree/main/examples/image_dataset/"><b>Test Dataset</b></a> |
   <a href="https://www.youtube.com/watch?v=t2LsQkyAGQc" target="4SM tutorial"><b>4SM Installation and Demo on YouTube</b></a>
 </div>
@@ -11,11 +12,13 @@
 <br/>
 
 # 4SM: Subcellular Signal Segmenting Spatiotemporal Model
-This code is part of our paper **4SM: New open-source software for subcellular segmentation and analysis of spatiotemporal fluorescence signals using deep learning** and is currently under review.
+
+This code is part of our paper **4SM: New open-source software for subcellular segmentation and analysis of spatiotemporal fluorescence signals using deep learning** and is currently under review. 
 
 The authors of the papers are <b>Sharif Amit Kamran, Khondker Fariha Hossain, Hussein Moghnieh, Sarah Riar, Allison Bartlett, Alireza Tavakkoli, Kenton M Sanders and Salah A. Baker</b>
 
 The code is authored and maintained by Sharif Amit Kamran [[Webpage]](https://www.sharifamit.com/) and Hussein Moghnieh [[Webpage]](https://medium.com/@husseinmoghnie).
+
 
 # Abstract
 
@@ -38,6 +41,7 @@ analysis throughput.
 
 [![IMAGE ALT TEXT HERE](docs/graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
 
+
 # Installation Guide
 
 ## Pre-requisite
@@ -54,15 +58,31 @@ analysis throughput.
 ## Installation Instructions and Demo on YouTube
 [![IMAGE ALT TEXT HERE](docs/youtube_graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
 
-# Graphical User Interface
-The code uses streamlit library to provide a graphical user interface for ease of use
 
+# Usage
+4SM pris web-based easy to use graphical interface for subcellular segmentation and analysis of spatiotemporal fluorescence signals using deep learning
 
-## Image Segmentation
+###Input:
+ - One or multiple images to process
+   - **NOTE: 4SM supports only 8-bit grey scale images**
+ - Set the threshold, crop size, and calibration parameters
+
+###Output:
+ - Segmented images
+ ![](docs/Image_Segmentation.png)  
+
+ - Quantification results of the segmented images
+  ![](docs/4SM_stochastic.png)  
+
+### Control Panel
+![](docs/control_panel.png)  
+
+### Image Segmentation
 ![](docs/Image_Segmentation.png)  
 
-## Control Panel
-![](docs/control_panel.png)  
+### Quantification
+
+
 
 # License
 The code is released under the GPL-2 License, you can read the license file included in the repository for details.

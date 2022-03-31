@@ -145,8 +145,8 @@ if 'runs' not in st.session_state:
   refresh_runs_dir()
 
 # Run Container
-
-input_image_buffer = run_container.file_uploader("Upload an image",
+st.sidebar.markdown("Only upload 8-bit grey scale images")
+input_image_buffer = run_container.file_uploader("Only upload 8-bit grey scale images",
                                                  accept_multiple_files=True,
                                                  type=["jpg", "jpeg", "tif", "tiff"],
                                                  key=st.session_state.file_uploader_widget)
