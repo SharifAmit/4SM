@@ -31,8 +31,8 @@ To understand cellular dynamics in fluorescence imaging, we need a fast, accurat
 
 ## Pre-requisite
 
-- CUDA version 10+
-- List of NVIDIA Graphics cards supporting CUDA 10+
+- CUDA version 10.0
+- List of NVIDIA Graphics cards supporting CUDA 10.0
       https://gist.github.com/standaloneSA/99788f30466516dbcc00338b36ad5acf
 
 ## Installing and Running 4SM
