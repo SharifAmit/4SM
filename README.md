@@ -22,22 +22,7 @@ The code is authored and maintained by Sharif Amit Kamran [[Webpage]](https://ww
 
 # Abstract
 
-Advancements in cellular imaging instrumentation and the availability of optogenetic and
-fluorescence probes tools have yielded a profound need for fast, accurate, and standardized
-analysis. Deep learning architectures have revolutionized the field of biomedical image analysis
-and consistently achieved state-of-the-art accuracy by learning from high volumes of data.
-Despite these advances, their application in segmentation of subcellular fluoroscein 
-signals is much needed. Cellular dynamic fluorescence signals can be plotted and visualized as a
-function of time and space in spatiotemporal maps (STMaps) and currently their segmentation
-and quantification are susceptible to user bias and hindered by slow workflow speed and lack of
-accuracy, especially for large datasets. In this study, we provide an open-source software tool
-that utilizes, at its core, a novel deep-learning methodology to fundamentally overcome
-segmentation of subcellular fluoroscein  signals challenges. The software framework
-demonstrates a high level of accuracy in segmenting calcium fluoroscein  signals and
-simultaneously provides a fast analysis pipeline and consistent data retrieval that can
-accommodate different patterns of signals across multiple cell types. The software allows
-seamless data accessibility, quantification, graphical visualization and enables large dataset
-analysis throughput.
+To understand cellular dynamics in fluorescence imaging, we need a fast, accurate, and reliable software or tool. In recent times, Deep learning has advanced biomedical image analysis and consistently achieved state-of-the-art accuracy by learning from high volumes of data. Despite these advances, there has been little to no application in the segmentation of subcellular fluorescein signals. Spatio-temporal maps (STMaps) are a transformed version of dynamic cellular signals recordings, visualized by an image of a function of time and space. Current approaches of segmentation and quantification of these images are time-consuming and require an expert annotator. To alleviate this, we propose an open-source software called "4SM" that incorporates a novel deep-learning methodology to segment subcellular fluorescein signals with high accuracy. Moreover, the tool provides a fast, robust, and consistent data analysis and retrieval pipeline that can accommodate different patterns of signals across multiple cell types. In addition, the software allows the user to experience seamless data accessibility, quantification, graphical visualization and allows high throughput for large datasets. 
 
 [![IMAGE ALT TEXT HERE](docs/graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
 
