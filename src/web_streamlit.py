@@ -41,8 +41,6 @@ st.markdown("<h1 style='text-align: center; color: black;'>4SM</h1>",
             unsafe_allow_html=True)
 
 run_container = st.sidebar.container()
-run_container .markdown("<h2 style='text-align: center; color: red;'>Upload only 8-bit grey scale images</h2>",
-                        unsafe_allow_html=True)
 
 run_container_form = st.sidebar.container()
 calibration_container = st.sidebar.container()
