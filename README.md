@@ -22,22 +22,7 @@ The code is authored and maintained by Sharif Amit Kamran [[Webpage]](https://ww
 
 # Abstract
 
-Advancements in cellular imaging instrumentation and the availability of optogenetic and
-fluorescence probes tools have yielded a profound need for fast, accurate, and standardized
-analysis. Deep learning architectures have revolutionized the field of biomedical image analysis
-and consistently achieved state-of-the-art accuracy by learning from high volumes of data.
-Despite these advances, their application in segmentation of subcellular fluoroscein 
-signals is much needed. Cellular dynamic fluorescence signals can be plotted and visualized as a
-function of time and space in spatiotemporal maps (STMaps) and currently their segmentation
-and quantification are susceptible to user bias and hindered by slow workflow speed and lack of
-accuracy, especially for large datasets. In this study, we provide an open-source software tool
-that utilizes, at its core, a novel deep-learning methodology to fundamentally overcome
-segmentation of subcellular fluoroscein  signals challenges. The software framework
-demonstrates a high level of accuracy in segmenting calcium fluoroscein  signals and
-simultaneously provides a fast analysis pipeline and consistent data retrieval that can
-accommodate different patterns of signals across multiple cell types. The software allows
-seamless data accessibility, quantification, graphical visualization and enables large dataset
-analysis throughput.
+To understand cellular dynamics in fluorescence imaging, we need a fast, accurate, and reliable software or tool. In recent times, Deep learning has advanced biomedical image analysis and consistently achieved state-of-the-art accuracy by learning from high volumes of data. Despite these advances, there has been little to no application in the segmentation of subcellular fluorescein signals. Spatio-temporal maps (STMaps) are a transformed version of dynamic cellular signals recordings, visualized by an image of a function of time and space. Current approaches of segmentation and quantification of these images are time-consuming and require an expert annotator. To alleviate this, we propose an open-source software called "4SM" that incorporates a novel deep-learning methodology to segment subcellular fluorescein signals with high accuracy. Moreover, the tool provides a fast, robust, and consistent data analysis and retrieval pipeline that can accommodate different patterns of signals across multiple cell types. In addition, the software allows the user to experience seamless data accessibility, quantification, graphical visualization and allows high throughput for large datasets. 
 
 [![IMAGE ALT TEXT HERE](docs/graphical_abstract.png)](https://www.youtube.com/watch?v=t2LsQkyAGQc)
 
@@ -46,8 +31,8 @@ analysis throughput.
 
 ## Pre-requisite
 
-- CUDA version 10+
-- List of NVIDIA Graphics cards supporting CUDA 10+
+- CUDA version 10.0
+- List of NVIDIA Graphics cards supporting CUDA 10.0
       https://gist.github.com/standaloneSA/99788f30466516dbcc00338b36ad5acf
 
 ## Installing and Running 4SM
@@ -62,25 +47,27 @@ analysis throughput.
 # Usage
 4SM pris web-based easy to use graphical interface for subcellular segmentation and analysis of spatiotemporal fluorescence signals using deep learning
 
-###Input:
- - One or multiple images to process
-   - **NOTE: 4SM supports only 8-bit grey scale images**
- - Set the threshold, crop size, and calibration parameters
+### Input:
+- **Note by: 4SM supports only 8-bit gray-scale images of JPEG, PNG and TIFF formats**
+- **Threshold :**
+As the predicted image is a probability map with values between 0 to 255. The user can pick a threshold value  (= 1 to 254) to make this image into a binary image with values of 0 and 255.
+- **Connectivity:**
+The connectivity ( = 4 or 8)  is a post-processing step for doing quantification using connected-components. So the connectivity checks either 4 neighboring pixels or 8 neighborhoods pixels for doing this quantification. Using this connected component we can count how many independent calcium transient events there are and the duration, spread, area and interval of these events.
+- **Stride:**
+4SM creates multiple small patches of image by using fixed sized overlapping crops from one test image. The image size can vary, but the crop size is fixed ( 64x64). By default we use a stride size of 3. However, having a larger stride will create a small number of crops from each test image and a smaller stride will yield a larger number of cropped images. Contrarily, larger strides will give faster yet poor visual results, whereas smaller strides will give slower yet high-quality visual results.
+    For example: Given Image size = 128 x 128, if we choose stride= 64, then the number of cropped images will be 4. If the stride = 8, the number of cropped images will be 81. 
 
-###Output:
- - Segmented images
+
+### Segmentation Output:
  ![](docs/Image_Segmentation.png)  
 
- - Quantification results of the segmented images
+### Quantification results of the segmented images
   ![](docs/4SM_stochastic.png)  
 
 ### Control Panel
 ![](docs/control_panel.png)  
 
-### Image Segmentation
-![](docs/Image_Segmentation.png)  
 
-### Quantification
 
 
 
