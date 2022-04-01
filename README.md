@@ -45,7 +45,7 @@ To understand cellular dynamics in fluorescence imaging, we need a fast, accurat
 
 
 # Usage
-4SM is web-based easy to use graphical interface for subcellular segmentation and analysis of spatiotemtfporal fluorescence signals using deep learning
+4SM is web-based easy to use graphical interface for subcellular segmentation and analysis of spatiotemporal fluorescence signals using deep learning
 
 ### Input:
 - **Note: 4SM supports only 8-bit gray-scale images of JPEG, PNG and TIFF formats**
