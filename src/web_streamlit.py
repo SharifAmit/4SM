@@ -41,6 +41,9 @@ st.markdown("<h1 style='text-align: center; color: black;'>4SM</h1>",
             unsafe_allow_html=True)
 
 run_container = st.sidebar.container()
+run_container .markdown("<h2 style='text-align: center; color: red;'>Upload only 8-bit grey scale images</h2>",
+                        unsafe_allow_html=True)
+
 run_container_form = st.sidebar.container()
 calibration_container = st.sidebar.container()
 st.sidebar.markdown("""---""")
@@ -145,8 +148,7 @@ if 'runs' not in st.session_state:
   refresh_runs_dir()
 
 # Run Container
-st.sidebar.markdown("Only upload 8-bit grey scale images")
-input_image_buffer = run_container.file_uploader("Only upload 8-bit grey scale images",
+input_image_buffer = run_container.file_uploader("",
                                                  accept_multiple_files=True,
                                                  type=["jpg", "jpeg", "tif", "tiff"],
                                                  key=st.session_state.file_uploader_widget)
