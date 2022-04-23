@@ -34,11 +34,7 @@ year = {2022},
 issn = {2589-0042},
 doi = {https://doi.org/10.1016/j.isci.2022.104277},
 url = {https://www.sciencedirect.com/science/article/pii/S2589004222005478},
-author = {Sharif Amit Kamran and Khondker Fariha Hossain and Hussein Moghnieh and Sarah Riar and Allison Bartlett and Alireza Tavakkoli and Kenton M. Sanders and Salah A. Baker},
-keywords = {Ca imaging analysis, generative adversarial networks, spatio-temporal map segmentation, deep learning},
-abstract = {Summary
-Cellular imaging instrumentation advancements as well as readily available optogenetic and fluorescence sensors have yielded a profound need for fast, accurate, and standardized analysis. Deep-learning architectures have revolutionized the field of biomedical image analysis and have achieved state-of-the-art accuracy. Despite these advancements, deep learning architectures for the segmentation of subcellular fluorescence signals is lacking. Cellular dynamic fluorescence signals can be plotted and visualized using spatiotemporal maps (STMaps) and currently their segmentation and quantification are hindered by slow workflow speed and lack of accuracy, especially for large datasets. In this study, we provide a software tool that utilizes a deep-learning methodology to fundamentally overcome signal segmentation challenges. The software framework demonstrates highly optimized and accurate calcium signal segmentation and provides a fast analysis pipeline that can accommodate different patterns of signals across multiple cell types. The software allows seamless data accessibility, quantification, graphical visualization and enables large dataset analysis throughput.}
-}
+author = {Sharif Amit Kamran and Khondker Fariha Hossain and Hussein Moghnieh and Sarah Riar and Allison Bartlett and Alireza Tavakkoli and Kenton M. Sanders and Salah A. Baker}
 ```
 
 # Abstract
