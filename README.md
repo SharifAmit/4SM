@@ -35,6 +35,7 @@ issn = {2589-0042},
 doi = {https://doi.org/10.1016/j.isci.2022.104277},
 url = {https://www.sciencedirect.com/science/article/pii/S2589004222005478},
 author = {Sharif Amit Kamran and Khondker Fariha Hossain and Hussein Moghnieh and Sarah Riar and Allison Bartlett and Alireza Tavakkoli and Kenton M. Sanders and Salah A. Baker}
+}
 ```
 
 # Abstract
