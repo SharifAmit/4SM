@@ -14,7 +14,7 @@
 # 4SM: Subcellular Signal Segmenting Spatiotemporal Model
 
 This code is part of our paper **4SM: New open-source software for subcellular segmentation and analysis of spatiotemporal fluorescence signals using deep learning** and is currently under review. 
-[**View Paper: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4016761**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4016761)
+[**View Paper: https://www.cell.com/iscience/fulltext/S2589-0042(22)00547-8**](https://www.cell.com/iscience/fulltext/S2589-0042(22)00547-8)
 
 
 The authors of the papers are <b>Sharif Amit Kamran, Khondker Fariha Hossain, Hussein Moghnieh, Sarah Riar, Allison Bartlett, Alireza Tavakkoli, Kenton M Sanders and Salah A. Baker</b>
