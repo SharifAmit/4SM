@@ -1,5 +1,5 @@
 <h4 align="center">
-  4SM: Subcellular Signal Segmenting Spatiotemporal Model
+  4SM: Subcellular Signal Segmenting Spatiotemporal Model   
 </h4>
 
 <div align="center">
@@ -9,9 +9,10 @@
   <a href="https://www.youtube.com/watch?v=t2LsQkyAGQc" target="4SM tutorial"><b>4SM Installation and Demo on YouTube</b></a>
 </div>
 
+
 <br/>
 
-# 4SM: Subcellular Signal Segmenting Spatiotemporal Model
+# 4SM: Subcellular Signal Segmenting Spatiotemporal Model <a href="https://zenodo.org/badge/latestdoi/392980422"><img src="https://zenodo.org/badge/392980422.svg" alt="DOI"></a>
 
 This code is part of our paper **4SM: New open-source software for subcellular segmentation and analysis of spatiotemporal fluorescence signals using deep learning** and has been accepted to [iScience](https://www.cell.com/iscience/fulltext/S2589-0042(22)00547-8).
 
